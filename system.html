@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="styles.css">
+<title>Solar System Simulation</title>
+</head>
+<body>
+  <div class="sun"></div>
+  <div class="orbit mercury-orbit">
+    <div class="planet mercury"></div>
+  </div>
+  <div class="orbit venus-orbit">
+    <div class="planet venus"></div>
+  </div>
+  <div class="orbit earth-orbit">
+    <div class="planet earth"></div>
+  </div>
+  <div class="orbit mars-orbit">
+    <div class="planet mars"></div>
+  </div>
+  <div class="asteroid-belt" id="asteroidBelt">
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+    const asteroidBelt = document.getElementById("asteroidBelt");
+  
+    const numberOfAsteroids = 100; 
+    for (let i = 0; i < numberOfAsteroids; i++) {
+      const asteroid = document.createElement("div");
+      asteroid.className = "asteroid";
+      asteroidBelt.appendChild(asteroid);
+    }
+  });
+    </script>
+  </div>
+  <div class="orbit jupiter-orbit">
+    <div class="planet jupiter"></div>
+  </div>
+  <div class="orbit saturn-orbit">
+    <div class="planet saturn"></div>
+    <div class="ring"></div>
+  </div>
+  </div>
+  <div class="orbit uranus-orbit">
+    <div class="planet uranus"></div>
+  </div>
+  <div class="orbit neptune-orbit">
+    <div class="planet neptune"></div>
+  </div>
+  <div class="orbit pluto-orbit">
+    <div class="planet pluto"></div>
+  </div>  
+  <div class="stars">
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+  const starsContainer = document.querySelector(".stars");
+
+  const numberOfStars = 100; // Adjust the number of stars as needed
+  for (let i = 0; i < numberOfStars; i++) {
+    const star = document.createElement("div");
+    star.className = "star";
+    star.style.top = `${Math.random() * 100}%`;
+    star.style.left = `${Math.random() * 100}%`;
+
+    // Calculate a random animation delay between 0 and 5 seconds
+    const animationDelay = Math.random() * 5 + "s";
+    star.style.animationDelay = animationDelay;
+
+    starsContainer.appendChild(star);
+  }
+});
+    </script>
+  </div>
+</body>
+</html>
